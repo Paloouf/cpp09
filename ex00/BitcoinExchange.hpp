@@ -6,7 +6,7 @@
 /*   By: ltressen <ltressen@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:25:13 by ltressen          #+#    #+#             */
-/*   Updated: 2023/11/27 15:26:40 by ltressen         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:20:41 by ltressen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,6 @@ public:
 	
 	void	getData();
 	void	fillMap(std::string line);
-
-
-	class WrongFormat : public std::exception{
-		const char* what() const throw(){
-			return ("Wrong Format\n");
-		}
-	};
-
-	class FileException : public std::exception{
-		const char* what() const throw(){
-			return ("Couldn't open file\n");
-		}
-	};
 private:
 	BitcoinExchange();
 	BitcoinExchange(const BitcoinExchange& ref);
