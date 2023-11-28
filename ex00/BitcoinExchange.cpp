@@ -6,7 +6,7 @@
 /*   By: ltressen <ltressen@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:26:10 by ltressen          #+#    #+#             */
-/*   Updated: 2023/11/27 15:37:50 by ltressen         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:53:04 by ltressen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ void	BitcoinExchange::getData(){
 
 std::string	BitcoinExchange::findNextDate(std::string date)
 {
-	std::stringstream   s(date);
-	std::string         year, month, day, concatenated;
+	std::stringstream   sDate(date);
+	std::string         year, month, day, result;
 
-	getline(s, year, '-');
-	getline(s, month, '-');
-	getline(s, day);
+	std::getline(sDate, year, '-');
+	std::getline(sDate, month, '-');
+	std::getline(sDate, day);
 	int	y = atoi(year.c_str());
 	int	m = atoi(month.c_str());
 	int	d = atoi(day.c_str());
@@ -83,10 +83,10 @@ std::string	BitcoinExchange::findNextDate(std::string date)
 		m = 12;
 		y--;
 	}
-	std::stringstream conc;
-	conc << y << '-' << std::setw(2) << std::setfill('0') << m << '-' << std::setw(2) << std::setfill('0') << d;
-	concatenated = conc.str();
-	return (concatenated);
+	std::stringstream res;
+	res << y << '-' << std::setw(2) << std::setfill('0') << m << '-' << std::setw(2) << std::setfill('0') << d;
+	result = res.str();
+	return (result);
 }
 
 void	BitcoinExchange::findRate(std::string date, float value){
@@ -143,7 +143,6 @@ void	BitcoinExchange::checkDates(std::string check){
 		return;}
 		
 	findRate(date, valueCheck);
-	
 }
 
 void BitcoinExchange::checkFormat(){

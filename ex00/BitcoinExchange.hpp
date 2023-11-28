@@ -6,7 +6,7 @@
 /*   By: ltressen <ltressen@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:25:13 by ltressen          #+#    #+#             */
-/*   Updated: 2023/11/27 17:20:41 by ltressen         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:39:55 by ltressen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <sstream>
 #include <cmath>
 #include <iomanip>
-
 
 class BitcoinExchange
 {
