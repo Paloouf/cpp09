@@ -6,7 +6,7 @@
 /*   By: ltressen <ltressen@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:26:10 by ltressen          #+#    #+#             */
-/*   Updated: 2023/11/28 11:53:04 by ltressen         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:19:05 by ltressen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	BitcoinExchange::findRate(std::string date, float value){
 	if (_dataRates.find(date) != _dataRates.end())
 	{
 		float res = value * _dataRates[date];
-		std::cout << "Rate of Bitcoin on the " << date << " is : " << res << std::endl;
+		std::cout << date << " => "<< value << " = " << res << std::endl;
 		return;
 	}
 	else
