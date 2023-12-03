@@ -14,9 +14,10 @@
 
 #include <iostream>
 #include <vector>
-#include <list>
+#include <deque>
 #include <cstdlib>
 #include <cmath>
+#include <algorithm>
 
 class PmergeMe{
 	public:
@@ -27,9 +28,22 @@ class PmergeMe{
 		PmergeMe& operator=(const PmergeMe& ref);
 		void	parsing();
 		void	printCont();
+		void	printContAfter();
+		void	sorting();
+
+		//Vector functions
+		void	insertSortV(std::vector<int>& vec);
+		void	mergeV(std::vector<int>& vec, std::vector<int>& left, std::vector<int>& right);
+		void	sortVec(std::vector<int>& vec);
+
+		//deque functions
+		void	insertSortD(std::deque<int>& deque);
+		void	mergeD(std::deque<int>& deque, std::deque<int>& left, std::deque<int>& right);
+		void	sortDeq(std::deque<int>& deque);
+
 		
 	private:
 		std::vector<int> _vec;
-		std::list<int> _list;
+		std::deque<int> _deque;
 		char** _input;
 };
