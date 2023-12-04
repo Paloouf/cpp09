@@ -6,7 +6,7 @@
 /*   By: ltressen <ltressen@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:26:10 by ltressen          #+#    #+#             */
-/*   Updated: 2023/11/28 15:19:05 by ltressen         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:15:08 by ltressen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,15 @@ void	BitcoinExchange::checkDates(std::string check){
 	if (value.find("-") == 0){
 		std::cout << "Invalid negative value format\n";
 		return ;}
-	else if (value.size() > 4 || value.size() > 1000){
+	
+	else if (valueCheck < 0 || valueCheck > 1000){
 		std::cout << "Invalid value format\n";
 		return;}
-		
+	for (unsigned long i = 0; i < value.size(); i++){
+		if (!(isdigit(value[i]) || value[i] == '.')){
+			std::cout << "Invalid value format\n";
+			return;}
+	}	
 	findRate(date, valueCheck);
 }
 
